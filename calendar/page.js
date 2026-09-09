@@ -160,12 +160,16 @@ class CalendarHandler {
 
   _getCalendarOptions() {
     return {
-     week: {
+      week: {
         taskView: false,
         startDayOfWeek: getFirstDayOfWeek(),
         dayNames: [t('Sun'), t('Mon'), t('Tue'), t('Wed'), t('Thu'), t('Fri'), t('Sat')],
         
-        
+        // MODIFIEZ OU AJOUTEZ CES DEUX LIGNES :
+        hourStart: 7.5, // ToastUI accepte les nombres décimaux pour les demi-heures dans certaines versions, sinon mettez 7
+        hourEnd: 20,
+      },
+      month: {   
       theme: this._calendarTheme(),
       defaultView: 'week',
       isReadOnly,
